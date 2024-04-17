@@ -1,0 +1,146 @@
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.titulo,
+.header_descripcion {
+  text-align: center;
+}
+
+.container {
+  margin: 3.1rem auto 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+}
+
+h1,
+p {
+  background-color: #ecf0f1;
+  margin-top: 5;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+/** Formulario */
+.formulario {
+  background-color: #fff;
+  padding: 2.5rem 0.62rem;
+  border-radius: 0.3rem;
+}
+
+.campo {
+  margin-bottom: 10px;
+  margin: auto 1.25rem auto;
+}
+
+.campo_input {
+  display: block;
+  width: 100%;
+  height: 2.3rem;
+  border-radius: 0.2rem;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 0.1px solid black;
+}
+
+.campo_radio {
+  margin-top: 8px;
+  display: inline-block;
+  margin-right: 0.6rem;
+  min-height: 1rem;
+  min-width: 1rem;
+}
+
+label {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 1.12rem;
+  margin-bottom: 0.5rem;
+}
+
+.campo_textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.62rem;
+  resize: vertical;
+}
+
+.campo_submit {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  background-color: #37af65;
+  color: inherit;
+  font-weight: 600;
+}
+
+.campo_submit:hover {
+  background-color: aquamarine;
+  cursor: pointer;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  border-color: #37af65; /* Color de borde cuando se pasa el cursor o está enfocado */
+}
+
+.option {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+
+.option:hover,
+.option:focus {
+  background-color: #f4f4f4; /* Color de fondo cuando se pasa el cursor o está enfocado */
+}
+
+.option:checked {
+  background-color: #37af65; /* Color de fondo cuando se selecciona una opción */
+  color: #fff;
+}
+
+.pregunta {
+  font-weight: bold;
+  color: rgb(145, 145, 202); /* Color más claro para las preguntas */
+}
+.respuesta {
+  color: black; /* Color oscuro para las respuestas */
+}
