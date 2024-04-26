@@ -28,7 +28,7 @@ if ($varsesion == null || $varsesion = '') {
         <div class="container-fluid">    
             <main class="container">
                 <div class="box1">
-                    <div class="btn1"><button type="button" class="butto1"><a href="http://127.0.0.1:5000">Diagnosticar</a><i id="icons" class="fas fa-file-medical-alt"></i></button></i></i></div>
+                    <div class="btn1"><button type="button" class="butto1"><a href="./cdiagnostico/form_diagnostico/templates/formulario.html">Diagnosticar</a><i id="icons" class="fas fa-file-medical-alt"></i></button></i></i></div>
                     <div class="btn1"><button type="button" class="butto1"><a href="./agendamiento/cita.php">Agendar cita</a><i id="icons" class="fas fa-screwdriver"></i></button></div>
                 </div>
             </main>

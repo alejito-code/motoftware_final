@@ -4,38 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='estilos.css') }}"
-    />
-    <title>Formulario</title>
-    <link
       rel="shortcut icon"
       type="image/icon"
       href="../../../../../img/tuerca (1).png"
     />
+    <link rel="stylesheet" href="../static/estilos.css" />
+    <title>Formulario</title>
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <h1 class="titulo">Formulario de Encuesta</h1>
-        <p class="header_descripcion">
-          Gracias por tomarte el tiempo de diligenciar el siguiente formulario,
-          te servirá tanto a ti como al mecánico para saber qué tiene tu moto.
-        </p>
-      </header>
-      <h1>{{ pregunta["pregunta"] }}</h1>
-      <form action="/" method="POST">
-        <select name="respuesta" required>
-          {% for opcion in pregunta["opciones"] %}
-          <option class="option" value="{{ opcion }}">{{ opcion }}</option>
-          {% endfor %}</select
-        ><br />
-        {% if pregunta_actual < 9 %}
-        <input class="campo_submit" type="submit" value="Siguiente" />
-        {% else %}
-        <input class="campo_submit" type="submit" value="Finalizar" />
-        {% endif %}
-      </form>
+    <h1 class="title">Formulario para tu diagnostico</h1>
+    <a href="../../../selec_cita.php" class="atras"
+      ><i class="fas fa-chevron-left"></i> Atras</a
+    >
+    <div id="form-page1">
+      <button id="next-page-btn">Siguiente</button>
+      <!-- BTN para pasar a la pagina con el resto de preguntas -->
     </div>
+    <div id="form-page2" style="display: none">
+      <button id="atras-page-btn">Anterior</button>
+      <button id="submit-btn">Enviar respuestas</button>
+    </div>
+    <script src="../app.js"></script>
   </body>
+  <script src=https://kit.fontawesome.com/86860db679.js crossorigin="anonymous"></script>
 </html>
