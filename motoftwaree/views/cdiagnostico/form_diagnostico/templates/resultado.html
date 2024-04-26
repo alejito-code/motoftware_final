@@ -4,78 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='estilos.css') }}"
-    />
-    <title>Resultado</title>
-    <link
       rel="shortcut icon"
       type="image/icon"
       href="../../../../../img/tuerca (1).png"
     />
+    <title>Resultado</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/estilos.css" />
   </head>
   <body>
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %}
-    <ul class="messages">
-      {% for category, message in messages %}
-      <li class="{{ category }}">{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %} {% endwith %}
-    <h1>Gracias por completar la encuesta</h1>
-    <h2>Diagnósticos:</h2>
-    {% for diagnostico_item in diagnostico %} {% for mensaje in diagnostico_item
-    %}
-    <p>{{ mensaje }}</p>
-    {% endfor %} {% endfor %}
-    <h2>Respuestas:</h2>
-    <ul>
-      {% for pregunta, respuesta in respuestas %}
-      <li>
-        <strong class="pregunta">{{ pregunta }}</strong>:
-        <ul>
-          <li class="respuesta">{{ respuesta }}</li>
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <!-- Mostrar mensajes de error -->
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %}
-    <ul class="messages">
-      {% for category, message in messages %}
-      <li class="{{ category }}">{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %} {% endwith %}
-
-    <form action="/" method="GET">
-      <input
-        type="submit"
-        class="campo_submit"
-        value="Volver al inicio del formulario"
-      />
-    </form>
-    <form action="/download" method=" GET">
-      <input
-        class="campo_submit"
-        type="submit"
-        value="Descargar Respuestas como PDF"
-      />
-    </form>
-    <div class="btn1">
-      <button type="button" class="campo_submit" onclick="redirigirACita()">
-        Redirigir a la interfaz de citas
-      </button>
+    <div class="fondo-answers">
+      <h1 class="result-title">
+        Gracias por completar el anterior formulario. Este ayudará tanto al
+        mecánico como a ti a conocer el estado de tu moto.
+      </h1>
     </div>
-    <!-- Script para redirigir al hacer clic en el botón -->
+    <div class="answers" id="answers-container"></div>
+    <div>
+      <button class="volver-btn" id="volver-btn">
+        Volver a interfaz de citas
+      </button>
+      <button class="agendar-btn" id="agendar-btn">
+        Agendar cita de diagnostico
+      </button>
+      <button class="download-btn" id="download-btn">Descargar como PDF</button>
+    </div>
+
+    <script src="../app.js"></script>
     <script>
-      function redirigirACita() {
-        window.location.href =
-          "//localhost/motoftware_final/motoftwaree/views/selec_cita.php";
+      // Obtener las respuestas de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const respuestas = Object.fromEntries(urlParams.entries());
+      const btn1 = document.getElementById("volver-btn");
+      const bt2 = document.getElementById("agendar-btn");
+
+      const answersContainer = document.getElementById("answers-container");
+      for (const [question, answer] of Object.entries(respuestas)) {
+        const p = document.createElement("p");
+        p.textContent = `${question}: ${answer}`;
+        answersContainer.appendChild(p);
       }
+
+      document.getElementById("download-btn").addEventListener("click", () => {
+        const element = document.getElementById("answers-container");
+        html2pdf().from(element).save();
+      });
+
+      btn1.addEventListener("click", () => {
+        window.location.href = "../../../selec_cita.php";
+      });
+
+      bt2.addEventListener("click", () => {
+        window.location.href = "../../../agendamiento/diagnostico.php";
+      });
     </script>
+    <style>
+      p {
+        margin-left: 15px;
+        margin-right: 10px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+      }
+    </style>
   </body>
+  <script src=https://kit.fontawesome.com/86860db679.js crossorigin="anonymous"></script>
 </html>

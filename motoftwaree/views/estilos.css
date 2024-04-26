@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  height: 70vh;
+  font-family: Arial, sans-serif;
+  background: url(cdiagnostico/img/logoBlanco.png);
+  background-size: cover;
+  background-position: center;
 }
 
 h1 {
@@ -12,7 +16,13 @@ h1 {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Color blanco con opacidad del 50% */
+  backdrop-filter: blur(10px); /* Efecto de borrosidad */
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

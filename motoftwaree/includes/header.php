@@ -78,7 +78,8 @@ if ($actualsesion == null || $actualsesion == '') {
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Ver Citas:</h6>
-                        <a class="collapse-item" href="../views/citas.php">Mostrar</a>
+                        <a class="collapse-item" href="../views/citas.php">Mostrar citas</a>
+                        <a class="collapse-item" href="../views/citas copy.php">Mostrar diagnosticos</a>
                         <a class="collapse-item" href="../views/selec_cita.php">Agendar cita</a>
                     </div>
                 </div>
