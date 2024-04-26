@@ -63,9 +63,15 @@ if ($varsesion == null || $varsesion = '') {
                         <?php
 
                         include "../includes/db.php";
-                        $result = mysqli_query($conexion, "SELECT * FROM user u INNER JOIN roles r ON u.rol = r.id WHERE r.rol = 'Cliente' ");
-                        while ($fila = mysqli_fetch_assoc($result)) :
+                        $result = mysqli_query($conexion, "SELECT c.id_hora, h.id FROM citas c INNER JOIN horario h ON h.id = c.id_hora ");
 
+                            include("../../includes/db.php");
+                            //Codigo para mostrar categorias desde otra tabla
+                            $sql = "SELECT c.id_hora, h.id AS ih, h.hora AS hora FROM citas c INNER JOIN horario h ON h.id = c.id_hora WHERE c.id_hora != h.id";
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($consulta = mysqli_fetch_array($resultado)) {
+                                echo '<option value="' . $consulta['ih'] . '">' . $consulta['hora'] . '</option>';
+                              }
                         ?>
                             <tr>
                                 <td><?php echo $fila['id']; ?></td>

@@ -104,6 +104,7 @@ if ($actualsesion == null || $actualsesion == '') {
                     <i class="fa fa-toolbox" aria-hidden="true"></i>
                     <span>Servicios</span></a>
             </li>
+
             <?php
                 };
             ?> 
@@ -120,6 +121,13 @@ if ($actualsesion == null || $actualsesion == '') {
             <?php 
                 if( $actualsesion == 1){
             ?>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="../views/horarios.php">
+                <i class="far fa-calendar-alt"></i>
+                    <span>Horario</span></a>
+            </li>
 
             <!-- Nav Item - user -->
             <li class="nav-item">

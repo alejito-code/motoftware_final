@@ -28,10 +28,8 @@ if ($varsesion == null || $varsesion = '') {
         <div class="container-fluid">    
             <main class="container">
                 <div class="box1">
-                    <div class="btn1"><button type="button" class="butto1"><a href="./agendamiento/mantenimiento.php">Falla Mantenimiento</a><i id="icons" class="fas fa-warehouse"></i></button></div>
                     <div class="btn1"><button type="button" class="butto1"><a href="http://127.0.0.1:5000">Diagnosticar</a><i id="icons" class="fas fa-file-medical-alt"></i></button></i></i></div>
-                    <div class="btn1"><button type="button" class="butto1"><a href="./agendamiento/felectrica.php">Falla Eléctrica</a><i id="icons" class="fas fa-bolt"></i></button></div>
-                    <div class="btn1"><button type="button" class="butto1"><a href="./agendamiento/fmecanica.php">Falla Mecánica</a><i id="icons" class="fas fa-screwdriver"></button></i></div>
+                    <div class="btn1"><button type="button" class="butto1"><a href="./agendamiento/cita.php">Agendar cita</a><i id="icons" class="fas fa-screwdriver"></i></button></div>
                 </div>
             </main>
         </div>

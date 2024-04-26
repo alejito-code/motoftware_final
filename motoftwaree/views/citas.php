@@ -74,12 +74,13 @@ if ($varsesion == null || $varsesion = '') {
                         <?php
 
                         include "../includes/db.php";
-                        $result = mysqli_query($conexion, "SELECT c.id_cita, c.fecha, c.hora, u.id AS idu, u.nombre AS nomu, m.placa, 
+                        $result = mysqli_query($conexion, "SELECT c.id_cita, c.fecha, h.hora, u.id AS idu, u.nombre AS nomu, m.placa, 
                         me.nombres, s.nombre AS serv, c.observacion FROM citas c 
                         INNER JOIN user u ON c.id_user = u.id 
                         INNER JOIN moto m ON c.id_moto = m.id
                         INNER JOIN servicio s ON c.id_serv = s.id
-                        INNER JOIN mecanico me ON c.id_mec = me.id");
+                        INNER JOIN mecanico me ON c.id_mec = me.id
+                        INNER JOIN horario h ON c.id_hora = h.id");
                         while ($fila = mysqli_fetch_assoc($result)) :
 
                         ?>

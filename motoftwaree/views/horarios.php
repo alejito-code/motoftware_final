@@ -52,8 +52,8 @@ if ($varsesion == null || $varsesion = '') {
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Dias de atencion medica</th>
-                                <th>Doctor</th>
+                                <th>Id</th>
+                                <th>Hora</th>
                                 <th>Fecha_Registro</th>
                                 <th>Acciones</th>
                             </tr>
@@ -67,8 +67,8 @@ if ($varsesion == null || $varsesion = '') {
 
                         ?>
                             <tr>
-                                <td><?php echo $fila['dias']; ?></td>
-                                <td><?php echo $fila['id_doctor']; ?></td>
+                                <td><?php echo $fila['id']; ?></td>
+                                <td><?php echo $fila['hora']; ?></td>
                                 <td><?php echo $fila['fecha']; ?></td>
 
 

@@ -23,33 +23,9 @@ if ($varsesion == null || $varsesion = '') {
                 <form action="../includes/functions.php" method="POST">
 
                     <div class="form-group">
-                        <label for="nombre" class="form-label">Dias de atencion medica*</label>
-                        <input type="text" id="dias" name="dias" class="form-control" required>
+                        <label for="nombre" class="form-label">Hora de atencion</label>
+                        <input type="text" id="hora" name="hora" class="form-control" required>
                     </div>
-
-
-                    <div class="form-group ">
-                        <label>Doctor</label>
-                        <select class="form-control" id="id_doctor" name="id_doctor">
-                            <option value="0">--Selecciona una opcion--</option>
-                            <?php
-
-                            include("db.php");
-                            //Codigo para mostrar categorias desde otra tabla
-                            $sql = "SELECT * FROM doctor ";
-                            $resultado = mysqli_query($conexion, $sql);
-                            while ($consulta = mysqli_fetch_array($resultado)) {
-                                echo '<option value="' . $consulta['id'] . '">' . $consulta['nombres'] . '</option>';
-                            }
-
-                            ?>
-
-
-                        </select>
-                    </div>
-
-
-
                     <input type="hidden" name="accion" value="insert_horario">
 
                     <br>
